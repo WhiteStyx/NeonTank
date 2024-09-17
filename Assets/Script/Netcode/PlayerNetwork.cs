@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
-public class PlayerNetwork : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+public class PlayerNetwork : NetworkBehaviour
+{/*
+    PlayerInput m_PlayerInput;
+    private void Awake()
     {
-        
+        GetComponent<NetworkObject>().SpawnAsPlayerObject(Player);
+        m_PlayerInput = GetComponent<PlayerInput>();
+        m_PlayerInput.enabled = false;
+    }
+    private void Update()
+    {
+        if(!IsOwner) return;
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    */
+
 }

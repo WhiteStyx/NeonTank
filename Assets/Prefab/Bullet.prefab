@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1067097351358910554}
   - component: {fileID: 2381106121438550074}
   - component: {fileID: -4579198084901416170}
+  - component: {fileID: 5278860005210324735}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -151,3 +152,24 @@ MonoBehaviour:
   wall: {fileID: 0}
   tank: {fileID: 0}
   duration: 3
+--- !u!114 &5278860005210324735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8893401449677097759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 0
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1

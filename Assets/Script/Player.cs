@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class Cube : MonoBehaviour
+public class Cube : NetworkBehaviour
 {
     [SerializeField] private CharacterController cc;
     [SerializeField] private float speed = 5f;
@@ -21,6 +22,10 @@ public class Cube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!IsOwner)
+        {
+            return;
+        }
         Move();
         Rotate();
         Shoot();
