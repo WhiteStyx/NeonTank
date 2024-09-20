@@ -9,6 +9,8 @@ public class Cube : NetworkBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform nozzle;
+    [SerializeField] private GameObject tankHead;
+    
     private Vector3 move;
     private Vector3 direction;
 
@@ -43,7 +45,7 @@ public class Cube : NetworkBehaviour
         direction = mousePosition - transform.position;
         direction = new Vector3(direction.x, 0, direction.z);
 
-        transform.forward = direction;
+        tankHead.transform.right = direction * -1;
     }
 
     private void Shoot()
