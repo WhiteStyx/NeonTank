@@ -21,6 +21,10 @@ public class Cube : NetworkBehaviour
         cc = GetComponent<CharacterController>();
     }
 
+    public override void OnNetworkSpawn()
+    {
+        transform.position = new Vector3(20, 20, 20);
+    }
     // Update is called once per frame
     void Update()
     {
