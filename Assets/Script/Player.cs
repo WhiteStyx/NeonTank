@@ -25,7 +25,7 @@ public class Cube : MonoBehaviour
     {
         Move();
         Rotate();
-        Shoot();
+        // Shoot();
     }
 
     private void Move()
