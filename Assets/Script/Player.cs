@@ -9,6 +9,7 @@ public class Cube : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform nozzle;
     [SerializeField] private GameObject tankHead;
+    [SerializeField] private int hp;
     
     private Vector3 move;
     private Vector3 direction;
@@ -59,5 +60,13 @@ public class Cube : MonoBehaviour
             return hitinfo.point;
         }
         return Vector3.zero;
+    }
+
+    private void Dead()
+    {
+        if(hp<=0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

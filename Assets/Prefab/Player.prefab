@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 5327651404383164346}
   - component: {fileID: 2216864000347076638}
   - component: {fileID: 3289518823489930937}
+  - component: {fileID: 540252520818106626}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -273,6 +274,7 @@ MonoBehaviour:
   bullet: {fileID: 8893401449677097759, guid: 7ff33359a96e0574b8095530a51bb66e, type: 3}
   nozzle: {fileID: 8743896960580084998}
   tankHead: {fileID: 3437404503912341750}
+  hp: 0
 --- !u!143 &3289518823489930937
 CharacterController:
   m_ObjectHideFlags: 0
@@ -299,6 +301,23 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &540252520818106626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8942169492077731219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8ef71ea2b54eff4b84175c4175095c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMag: 3
+  magSize: 0
+  reloadTime: 2
+  bullet: {fileID: 8893401449677097759, guid: 7ff33359a96e0574b8095530a51bb66e, type: 3}
+  nozzle: {fileID: 8743896960580084998}
 --- !u!1001 &2465002819441645512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -358,13 +377,43 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c3973098804ffee4298ec241cfcc5fd6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6260638175222726127}
   m_SourcePrefab: {fileID: 100100000, guid: c3973098804ffee4298ec241cfcc5fd6, type: 3}
 --- !u!4 &2720115335785787427 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c3973098804ffee4298ec241cfcc5fd6, type: 3}
   m_PrefabInstance: {fileID: 2465002819441645512}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3383358704663063193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3973098804ffee4298ec241cfcc5fd6, type: 3}
+  m_PrefabInstance: {fileID: 2465002819441645512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &6260638175222726127
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3383358704663063193}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: c3973098804ffee4298ec241cfcc5fd6, type: 3}
 --- !u!1001 &2555077001111723431
 PrefabInstance:
   m_ObjectHideFlags: 0

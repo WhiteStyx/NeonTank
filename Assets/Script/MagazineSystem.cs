@@ -28,7 +28,15 @@ public class MagazineSystem : MonoBehaviour
 
     private void Check()
     {
-        if(magSize<=0)  shootable = false;
+        if(magSize<=0)
+        {
+            shootable = false;
+            if(!reloading)
+                {
+                    reloading = true;
+                    StartCoroutine(StartReload());
+                }
+        }
         if(reloading) shootable = false;
     }
 
@@ -52,14 +60,6 @@ public class MagazineSystem : MonoBehaviour
             {
                 Instantiate(bullet, nozzle.position, nozzle.rotation);
                 magSize -= 1;
-            }
-            else
-            {
-                if(!reloading)
-                {
-                    reloading = true;
-                    StartCoroutine(StartReload());
-                }
             }
         }
     }
