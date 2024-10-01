@@ -34,4 +34,5 @@ public class Bullet : MonoBehaviour
             rb.velocity = direction * bulletSpeed;
         }
     }
+    
 }

@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cube : MonoBehaviour
+public class PlayerControl : MonoBehaviour
 {
-    [SerializeField] private CharacterController cc;
+    private CharacterController cc;
     [SerializeField] private float speed = 5f;
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform nozzle;
     [SerializeField] private GameObject tankHead;
-    [SerializeField] private int hp;
+    [SerializeField] public int hp;
     
     private Vector3 move;
     private Vector3 direction;

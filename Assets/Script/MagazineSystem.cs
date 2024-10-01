@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MagazineSystem : MonoBehaviour
 {
-    [SerializeField] private int maxMag;
-    [SerializeField] private int magSize;
+    [SerializeField] public int maxMag;
+    [SerializeField] private int currMag;
     [SerializeField] private float reloadTime;
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform nozzle;
@@ -14,7 +14,7 @@ public class MagazineSystem : MonoBehaviour
 
     void Start()
     {
-        magSize = maxMag;
+        currMag = maxMag;
         shootable = true;
         reloading = false;
     }
@@ -28,7 +28,7 @@ public class MagazineSystem : MonoBehaviour
 
     private void Check()
     {
-        if(magSize<=0)
+        if(currMag<=0)
         {
             shootable = false;
             if(!reloading)
@@ -59,7 +59,7 @@ public class MagazineSystem : MonoBehaviour
             if(shootable)
             {
                 Instantiate(bullet, nozzle.position, nozzle.rotation);
-                magSize -= 1;
+                currMag -= 1;
             }
         }
     }
@@ -68,7 +68,7 @@ public class MagazineSystem : MonoBehaviour
     {
         shootable = false;
         yield return new WaitForSeconds(reloadTime);
-        magSize = maxMag;
+        currMag = maxMag;
         shootable = true;
         reloading = false;
     }
