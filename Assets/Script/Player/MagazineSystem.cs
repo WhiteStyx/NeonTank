@@ -7,10 +7,10 @@ public class MagazineSystem : MonoBehaviour
     [SerializeField] public int maxMag;
     [SerializeField] private int currMag;
     [SerializeField] private float reloadTime;
-    [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform nozzle;
     bool reloading;
-    bool shootable;
+    public bool shootable;
 
     void Start()
     {
@@ -23,7 +23,6 @@ public class MagazineSystem : MonoBehaviour
     {
         Check();
         Reload();
-        Shoot();
     }
 
     private void Check()
@@ -48,18 +47,6 @@ public class MagazineSystem : MonoBehaviour
             {
                 reloading = true;
                 StartCoroutine(StartReload());
-            }
-        }
-    }
-
-    private void Shoot()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if(shootable)
-            {
-                Instantiate(bullet, nozzle.position, nozzle.rotation);
-                currMag -= 1;
             }
         }
     }

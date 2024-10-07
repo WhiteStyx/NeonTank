@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float bulletSpeed = 20f;
+    [SerializeField] public float bulletSpeed = 20f;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Transform wall;
     [SerializeField] private Collider tank;
     [SerializeField] private float duration = 3;
-
+    private GameObject body;
     private Vector3 direction;
     private Vector3 lastVelocity;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        body = GetComponent<GameObject>();
         rb.velocity = transform.forward * bulletSpeed;
     }
 

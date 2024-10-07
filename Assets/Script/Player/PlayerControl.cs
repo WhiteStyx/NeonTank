@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     private CharacterController cc;
+    private MagazineSystem magSys;
     [SerializeField] private float speed = 5f;
-    [SerializeField] private GameObject bullet;
+    public float bulletSpeed = 20f;
+    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform nozzle;
     [SerializeField] private GameObject tankHead;
     [SerializeField] public int hp;
@@ -19,6 +21,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         cc = GetComponent<CharacterController>();
+        magSys = GetComponent<MagazineSystem>();
     }
 
     // Update is called once per frame
@@ -26,7 +29,7 @@ public class PlayerControl : MonoBehaviour
     {
         Move();
         Rotate();
-        // Shoot();
+        Shoot();
     }
 
     private void Move()
@@ -46,9 +49,14 @@ public class PlayerControl : MonoBehaviour
 
     private void Shoot()
     {
+        bool shoot = GetComponent<MagazineSystem>().shootable;
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(bullet, nozzle.position, nozzle.rotation);
+            if(shoot)
+            {
+                GameObject bullet = Instantiate(bulletPrefab, nozzle.position, nozzle.rotation);
+                bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
+            }
         }
     }
 

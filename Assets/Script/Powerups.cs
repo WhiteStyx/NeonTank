@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Powerups : MonoBehaviour
@@ -24,11 +25,19 @@ public class Powerups : MonoBehaviour
 
     private void BulletSpeedIncrease()
     {
-        
+        player.bulletSpeed += speedUpAmount;
     }
 
     private void MaxHPIncrease()
     {
         player.hp += hpIncreaseAmount;
+    }
+
+    private void OnTriggerEnter(Collider coll)
+    {
+        if(coll.gameObject.tag == "Player")
+        {
+            targetPlayer = coll.gameObject;
+        }
     }
 }
