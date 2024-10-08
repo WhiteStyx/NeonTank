@@ -30,6 +30,7 @@ public class PlayerControl : MonoBehaviour
         Move();
         Rotate();
         Shoot();
+        Dead(); 
     }
 
     private void Move()
@@ -56,6 +57,7 @@ public class PlayerControl : MonoBehaviour
             {
                 GameObject bullet = Instantiate(bulletPrefab, nozzle.position, nozzle.rotation);
                 bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
+                magSys.currMag -= 1;
             }
         }
     }

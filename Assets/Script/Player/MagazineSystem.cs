@@ -5,7 +5,7 @@ using UnityEngine;
 public class MagazineSystem : MonoBehaviour
 {
     [SerializeField] public int maxMag;
-    [SerializeField] private int currMag;
+    [SerializeField] public int currMag;
     [SerializeField] private float reloadTime;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform nozzle;
