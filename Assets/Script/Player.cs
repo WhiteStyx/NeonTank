@@ -19,11 +19,14 @@ public class Cube : NetworkBehaviour
     void Start()
     {
         cc = GetComponent<CharacterController>();
+
+        Transform okeh = FindAnyObjectByType<Spawnpoint>().GetComponent<Spawnpoint>().GetPos((int) OwnerClientId);
+        transform.position = new Vector3(okeh.position.x, okeh.position.y, okeh.position.z);
     }
 
     public override void OnNetworkSpawn()
     {
-        transform.position = new Vector3(20, 20, 20);
+
     }
     // Update is called once per frame
     void Update()
