@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class Cube : NetworkBehaviour
 {
-    [SerializeField] private CharacterController cc;
+    private CharacterController cc;
+    private MagazineSystem magSys;
     [SerializeField] private float speed = 5f;
-    [SerializeField] private GameObject bullet;
+    public float bulletSpeed = 20f;
+    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform nozzle;
     [SerializeField] private GameObject tankHead;
+    [SerializeField] public int hp;
     
     private Vector3 move;
     private Vector3 direction;
@@ -22,6 +25,7 @@ public class Cube : NetworkBehaviour
 
         Transform okeh = FindAnyObjectByType<Spawnpoint>().GetComponent<Spawnpoint>().GetPos((int) OwnerClientId);
         transform.position = new Vector3(okeh.position.x, okeh.position.y, okeh.position.z);
+        magSys = GetComponent<MagazineSystem>();
     }
 
     public override void OnNetworkSpawn()
@@ -38,6 +42,7 @@ public class Cube : NetworkBehaviour
         Move();
         Rotate();
         Shoot();
+        Dead(); 
     }
 
     private void Move()
@@ -57,9 +62,15 @@ public class Cube : NetworkBehaviour
 
     private void Shoot()
     {
+        bool shoot = GetComponent<MagazineSystem>().shootable;
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(bullet, nozzle.position, nozzle.rotation);
+            if(shoot)
+            {
+                GameObject bullet = Instantiate(bulletPrefab, nozzle.position, nozzle.rotation);
+                bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
+                magSys.currMag -= 1;
+            }
         }
     }
 
@@ -71,5 +82,13 @@ public class Cube : NetworkBehaviour
             return hitinfo.point;
         }
         return Vector3.zero;
+    }
+
+    private void Dead()
+    {
+        if(hp<=0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
