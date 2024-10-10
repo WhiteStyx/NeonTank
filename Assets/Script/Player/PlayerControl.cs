@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public class Cube : NetworkBehaviour
+public class Player : NetworkBehaviour
 {
     private CharacterController cc;
     private MagazineSystem magSys;
