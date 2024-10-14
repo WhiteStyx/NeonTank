@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 3289518823489930937}
   - component: {fileID: -660465297732066558}
   - component: {fileID: 1042583256044866859}
-  - component: {fileID: -1709814238832916031}
+  - component: {fileID: 4211926365416369546}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -317,12 +317,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa028b8c6517bb4894aa6424b3ff932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cc: {fileID: 0}
   speed: 5
-  bullet: {fileID: 8893401449677097759, guid: 7ff33359a96e0574b8095530a51bb66e, type: 3}
+  bulletSpeed: 20
+  bulletPrefab: {fileID: 0}
   nozzle: {fileID: 8743896960580084998}
   tankHead: {fileID: 3437404503912341750}
---- !u!114 &-1709814238832916031
+  hp: 0
+--- !u!114 &4211926365416369546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -331,7 +332,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8942169492077731219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UseUnreliableDeltas: 0
