@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -17,15 +18,29 @@ public class Player : NetworkBehaviour
     private Vector3 move;
     private Vector3 direction;
 
+    // Pinjem
+    public GameObject GOJ;
+    public TextMeshProUGUI textMeshProUGUI;
 
     // Start is called before the first frame update
     void Start()
     {
         cc = GetComponent<CharacterController>();
+        magSys = GetComponent<MagazineSystem>();
 
         Transform okeh = FindAnyObjectByType<Spawnpoint>().GetComponent<Spawnpoint>().GetPos((int) OwnerClientId);
         transform.position = new Vector3(okeh.position.x, okeh.position.y, okeh.position.z);
-        magSys = GetComponent<MagazineSystem>();
+        Debug.Log(transform.position.ToString());
+
+        GOJ = GameObject.FindGameObjectWithTag("Debug");
+
+        if (GOJ)
+        {
+            textMeshProUGUI = GOJ.GetComponent<TextMeshProUGUI>();
+            textMeshProUGUI.text = transform.position.ToString();
+        }
+
+
     }
 
     public override void OnNetworkSpawn()
@@ -39,7 +54,7 @@ public class Player : NetworkBehaviour
         {
             return;
         }
-        Move();
+        //Move();
         Rotate();
         Shoot();
         Dead(); 
