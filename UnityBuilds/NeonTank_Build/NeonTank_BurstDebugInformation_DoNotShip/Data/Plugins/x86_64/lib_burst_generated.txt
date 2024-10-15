@@ -22,8 +22,8 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Services.Core.Scheduler;
 --assembly-defines=Unity.Services.Core.Environments;
 --assembly-defines=Unity.Services.Relay;
---assembly-defines=Unity.Multiplayer.Tools.NetStats;
 --assembly-defines=Unity.Services.Core.Configuration;
+--assembly-defines=Unity.Multiplayer.Tools.NetStats;
 --assembly-defines=Unity.RenderPipelines.Core.ShaderLibrary;
 --assembly-defines=Unity.Collections;
 --assembly-defines=Unity.Netcode.Runtime;
@@ -32,8 +32,8 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities;
 --assembly-defines=Unity.Services.Core.Analytics;
---assembly-defines=Unity.Profiling.Core;
 --assembly-defines=Unity.Multiplayer.Tools.Common;
+--assembly-defines=Unity.Profiling.Core;
 --assembly-defines=Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
 --assembly-defines=Unity.Burst;
@@ -204,8 +204,8 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Services.Core.Scheduler;
 --assembly-defines=Unity.Services.Core.Environments;
 --assembly-defines=Unity.Services.Relay;
---assembly-defines=Unity.Multiplayer.Tools.NetStats;
 --assembly-defines=Unity.Services.Core.Configuration;
+--assembly-defines=Unity.Multiplayer.Tools.NetStats;
 --assembly-defines=Unity.RenderPipelines.Core.ShaderLibrary;
 --assembly-defines=Unity.Collections;
 --assembly-defines=Unity.Netcode.Runtime;
@@ -214,8 +214,8 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities;
 --assembly-defines=Unity.Services.Core.Analytics;
---assembly-defines=Unity.Profiling.Core;
 --assembly-defines=Unity.Multiplayer.Tools.Common;
+--assembly-defines=Unity.Profiling.Core;
 --assembly-defines=Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
 --assembly-defines=Unity.Burst;
@@ -388,8 +388,8 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Services.Core.Scheduler;
 --assembly-defines=Unity.Services.Core.Environments;
 --assembly-defines=Unity.Services.Relay;
---assembly-defines=Unity.Multiplayer.Tools.NetStats;
 --assembly-defines=Unity.Services.Core.Configuration;
+--assembly-defines=Unity.Multiplayer.Tools.NetStats;
 --assembly-defines=Unity.RenderPipelines.Core.ShaderLibrary;
 --assembly-defines=Unity.Collections;
 --assembly-defines=Unity.Netcode.Runtime;
@@ -398,8 +398,8 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities;
 --assembly-defines=Unity.Services.Core.Analytics;
---assembly-defines=Unity.Profiling.Core;
 --assembly-defines=Unity.Multiplayer.Tools.Common;
+--assembly-defines=Unity.Profiling.Core;
 --assembly-defines=Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
 --assembly-defines=Unity.Burst;
@@ -488,8 +488,8 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Services.Core.Scheduler;
 --assembly-defines=Unity.Services.Core.Environments;
 --assembly-defines=Unity.Services.Relay;
---assembly-defines=Unity.Multiplayer.Tools.NetStats;
 --assembly-defines=Unity.Services.Core.Configuration;
+--assembly-defines=Unity.Multiplayer.Tools.NetStats;
 --assembly-defines=Unity.RenderPipelines.Core.ShaderLibrary;
 --assembly-defines=Unity.Collections;
 --assembly-defines=Unity.Netcode.Runtime;
@@ -498,8 +498,8 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities;
 --assembly-defines=Unity.Services.Core.Analytics;
---assembly-defines=Unity.Profiling.Core;
 --assembly-defines=Unity.Multiplayer.Tools.Common;
+--assembly-defines=Unity.Profiling.Core;
 --assembly-defines=Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
 --assembly-defines=Unity.Burst;

@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 3289518823489930937}
   - component: {fileID: -660465297732066558}
   - component: {fileID: 1042583256044866859}
+  - component: {fileID: -1450528371121037983}
   - component: {fileID: 4211926365416369546}
   m_Layer: 0
   m_Name: Player
@@ -319,10 +320,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   bulletSpeed: 20
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 8893401449677097759, guid: 7ff33359a96e0574b8095530a51bb66e, type: 3}
   nozzle: {fileID: 8743896960580084998}
   tankHead: {fileID: 3437404503912341750}
-  hp: 0
+  hp: 5
+--- !u!114 &-1450528371121037983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8942169492077731219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8ef71ea2b54eff4b84175c4175095c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMag: 5
+  currMag: 0
+  reloadTime: 0
+  shootable: 0
 --- !u!114 &4211926365416369546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,12 +356,12 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
-  SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
+  SyncRotAngleX: 0
+  SyncRotAngleY: 0
+  SyncRotAngleZ: 0
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
   PositionThreshold: 0.001
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01

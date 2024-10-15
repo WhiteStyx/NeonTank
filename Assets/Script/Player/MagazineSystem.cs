@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 public class MagazineSystem : MonoBehaviour
@@ -7,8 +8,6 @@ public class MagazineSystem : MonoBehaviour
     [SerializeField] public int maxMag;
     [SerializeField] public int currMag;
     [SerializeField] private float reloadTime;
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform nozzle;
     bool reloading;
     public bool shootable;
 
