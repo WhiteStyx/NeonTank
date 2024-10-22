@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : NetworkBehaviour
 {
     private CharacterController cc;
     private MagazineSystem magSys;
+    public PlayerInput playerControls;
+    PlayerInput.PlayerActions p_input;
     [SerializeField] private float speed = 5f;
     public float bulletSpeed = 20f;
     [SerializeField] private GameObject bulletPrefab;
@@ -17,30 +19,22 @@ public class Player : NetworkBehaviour
     
     private Vector3 move;
     private Vector3 direction;
+    Vector3 moveDirection = Vector3.zero;
 
-    // Pinjem
-    public GameObject GOJ;
-    public TextMeshProUGUI textMeshProUGUI;
+    void Awake()
+    {
+        playerControls = new PlayerInput();
+        p_input = playerControls.Player;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         cc = GetComponent<CharacterController>();
-        magSys = GetComponent<MagazineSystem>();
 
         Transform okeh = FindAnyObjectByType<Spawnpoint>().GetComponent<Spawnpoint>().GetPos((int) OwnerClientId);
         transform.position = new Vector3(okeh.position.x, okeh.position.y, okeh.position.z);
-        Debug.Log(transform.position.ToString());
-
-        GOJ = GameObject.FindGameObjectWithTag("Debug");
-
-        if (GOJ)
-        {
-            textMeshProUGUI = GOJ.GetComponent<TextMeshProUGUI>();
-            textMeshProUGUI.text = transform.position.ToString();
-        }
-
-
+        magSys = GetComponent<MagazineSystem>();
     }
 
     public override void OnNetworkSpawn()
@@ -54,16 +48,28 @@ public class Player : NetworkBehaviour
         {
             return;
         }
-        //Move();
+        Move(p_input.Move.ReadValue<Vector2>());
         Rotate();
         Shoot();
         Dead(); 
     }
 
-    private void Move()
+    private void OnEnable()
     {
-        move = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-        cc.Move(move * speed * Time.deltaTime);
+        p_input.Enable();
+    }
+
+    private void OnDisable()
+    {
+        p_input.Disable();
+    }
+
+    private void Move(Vector2 input)
+    {
+        moveDirection.x = input.x;
+        moveDirection.z = input.y;
+        cc.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
+        Debug.Log(input);
     }
 
     private void Rotate()
