@@ -50,6 +50,8 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.Timeline;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Implementation;
+--assembly-defines=Unity.InputSystem;
+--assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Multiplayer.Tools.Initialization;
 --assembly-defines=Unity.Multiplayer.Tools.Adapters;
 --assembly-defines=Unity.Services.Authentication;
@@ -58,6 +60,7 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Multiplayer.Tools.MetricTypes;
 --assembly-defines=Unity.Services.Core.Registration;
 --assembly-defines=Unity.VisualScripting.State;
+--assembly-defines=Cinemachine;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsReporting;
 --assembly-defines=Unity.Multiplayer.Tools.MetricEvents;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Component;
@@ -232,6 +235,8 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.Timeline;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Implementation;
+--assembly-defines=Unity.InputSystem;
+--assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Multiplayer.Tools.Initialization;
 --assembly-defines=Unity.Multiplayer.Tools.Adapters;
 --assembly-defines=Unity.Services.Authentication;
@@ -240,6 +245,7 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Multiplayer.Tools.MetricTypes;
 --assembly-defines=Unity.Services.Core.Registration;
 --assembly-defines=Unity.VisualScripting.State;
+--assembly-defines=Cinemachine;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsReporting;
 --assembly-defines=Unity.Multiplayer.Tools.MetricEvents;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Component;
@@ -416,6 +422,8 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.Timeline;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Implementation;
+--assembly-defines=Unity.InputSystem;
+--assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Multiplayer.Tools.Initialization;
 --assembly-defines=Unity.Multiplayer.Tools.Adapters;
 --assembly-defines=Unity.Services.Authentication;
@@ -424,6 +432,7 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Multiplayer.Tools.MetricTypes;
 --assembly-defines=Unity.Services.Core.Registration;
 --assembly-defines=Unity.VisualScripting.State;
+--assembly-defines=Cinemachine;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsReporting;
 --assembly-defines=Unity.Multiplayer.Tools.MetricEvents;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Component;
@@ -516,6 +525,8 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.Timeline;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Implementation;
+--assembly-defines=Unity.InputSystem;
+--assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Multiplayer.Tools.Initialization;
 --assembly-defines=Unity.Multiplayer.Tools.Adapters;
 --assembly-defines=Unity.Services.Authentication;
@@ -524,6 +535,7 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Multiplayer.Tools.MetricTypes;
 --assembly-defines=Unity.Services.Core.Registration;
 --assembly-defines=Unity.VisualScripting.State;
+--assembly-defines=Cinemachine;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsReporting;
 --assembly-defines=Unity.Multiplayer.Tools.MetricEvents;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Component;

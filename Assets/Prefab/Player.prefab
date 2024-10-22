@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 3289518823489930937}
   - component: {fileID: -660465297732066558}
   - component: {fileID: 1042583256044866859}
+  - component: {fileID: 7807414493837543011}
   - component: {fileID: -1709814238832916031}
   - component: {fileID: 8614345335589163963}
   m_Layer: 0
@@ -345,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3429504384
+  GlobalObjectIdHash: 1182712739
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -368,10 +369,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   bulletSpeed: 20
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 8893401449677097759, guid: 7ff33359a96e0574b8095530a51bb66e, type: 3}
   nozzle: {fileID: 8743896960580084998}
   tankHead: {fileID: 3437404503912341750}
-  hp: 0
+  hp: 5
+--- !u!114 &7807414493837543011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8942169492077731219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8ef71ea2b54eff4b84175c4175095c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMag: 5
+  currMag: 0
+  reloadTime: 2
+  shootable: 0
 --- !u!114 &-1709814238832916031
 MonoBehaviour:
   m_ObjectHideFlags: 0

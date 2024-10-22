@@ -69,7 +69,6 @@ public class Player : NetworkBehaviour
         moveDirection.x = input.x;
         moveDirection.z = input.y;
         cc.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
-        Debug.Log(input);
     }
 
     private void Rotate()
