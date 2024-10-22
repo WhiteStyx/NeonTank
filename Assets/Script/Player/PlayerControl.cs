@@ -19,7 +19,7 @@ public class Player : NetworkBehaviour
     
     private Vector3 move;
     private Vector3 direction;
-    Vector3 moveDirection = Vector3.zero;
+    Vector3 moveDirection;
 
     void Awake()
     {
@@ -34,7 +34,10 @@ public class Player : NetworkBehaviour
 
         Transform okeh = FindAnyObjectByType<Spawnpoint>().GetComponent<Spawnpoint>().GetPos((int) OwnerClientId);
         transform.position = new Vector3(okeh.position.x, okeh.position.y, okeh.position.z);
+        moveDirection = okeh.position;
         magSys = GetComponent<MagazineSystem>();
+        Debug.Log(okeh.position);
+        Debug.Log(moveDirection);
     }
 
     public override void OnNetworkSpawn()
@@ -53,6 +56,7 @@ public class Player : NetworkBehaviour
         Shoot();
         Dead(); 
     }
+
 
     private void OnEnable()
     {

@@ -8,7 +8,6 @@ public class Spawnpoint : MonoBehaviour
 
     public Transform GetPos(int index)
     {
-        Debug.Log(index);
         return SpawnPos[index];
     }
 }
