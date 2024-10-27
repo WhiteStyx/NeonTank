@@ -27,11 +27,13 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.RenderPipelines.Core.ShaderLibrary;
 --assembly-defines=Unity.Collections;
 --assembly-defines=Unity.Netcode.Runtime;
+--assembly-defines=unity-websocket-sharp;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities.RNSM;
 --assembly-defines=Unity.Multiplayer.Tools.MetricTestData;
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities;
 --assembly-defines=Unity.Services.Core.Analytics;
+--assembly-defines=Unity.Services.Wire.Internal;
 --assembly-defines=Unity.Multiplayer.Tools.Common;
 --assembly-defines=Unity.Profiling.Core;
 --assembly-defines=Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary;
@@ -55,6 +57,7 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Multiplayer.Tools.Initialization;
 --assembly-defines=Unity.Multiplayer.Tools.Adapters;
 --assembly-defines=Unity.Services.Authentication;
+--assembly-defines=Unity.Services.Lobbies;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.RenderPipelines.Universal.Shaders;
 --assembly-defines=Unity.Multiplayer.Tools.MetricTypes;
@@ -64,6 +67,7 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsReporting;
 --assembly-defines=Unity.Multiplayer.Tools.MetricEvents;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Component;
+--assembly-defines=websocket-sharp;
 --assembly-defines=Unity.Collections.LowLevel.ILSupport;
 --assembly-defines=Unity.VisualScripting.Antlr3.Runtime;
 --assembly-defines=Unity.Burst.Unsafe;
@@ -212,11 +216,13 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.RenderPipelines.Core.ShaderLibrary;
 --assembly-defines=Unity.Collections;
 --assembly-defines=Unity.Netcode.Runtime;
+--assembly-defines=unity-websocket-sharp;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities.RNSM;
 --assembly-defines=Unity.Multiplayer.Tools.MetricTestData;
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities;
 --assembly-defines=Unity.Services.Core.Analytics;
+--assembly-defines=Unity.Services.Wire.Internal;
 --assembly-defines=Unity.Multiplayer.Tools.Common;
 --assembly-defines=Unity.Profiling.Core;
 --assembly-defines=Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary;
@@ -240,6 +246,7 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Multiplayer.Tools.Initialization;
 --assembly-defines=Unity.Multiplayer.Tools.Adapters;
 --assembly-defines=Unity.Services.Authentication;
+--assembly-defines=Unity.Services.Lobbies;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.RenderPipelines.Universal.Shaders;
 --assembly-defines=Unity.Multiplayer.Tools.MetricTypes;
@@ -249,6 +256,7 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsReporting;
 --assembly-defines=Unity.Multiplayer.Tools.MetricEvents;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Component;
+--assembly-defines=websocket-sharp;
 --assembly-defines=Unity.Collections.LowLevel.ILSupport;
 --assembly-defines=Unity.VisualScripting.Antlr3.Runtime;
 --assembly-defines=Unity.Burst.Unsafe;
@@ -399,11 +407,13 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.RenderPipelines.Core.ShaderLibrary;
 --assembly-defines=Unity.Collections;
 --assembly-defines=Unity.Netcode.Runtime;
+--assembly-defines=unity-websocket-sharp;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities.RNSM;
 --assembly-defines=Unity.Multiplayer.Tools.MetricTestData;
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities;
 --assembly-defines=Unity.Services.Core.Analytics;
+--assembly-defines=Unity.Services.Wire.Internal;
 --assembly-defines=Unity.Multiplayer.Tools.Common;
 --assembly-defines=Unity.Profiling.Core;
 --assembly-defines=Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary;
@@ -427,6 +437,7 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Multiplayer.Tools.Initialization;
 --assembly-defines=Unity.Multiplayer.Tools.Adapters;
 --assembly-defines=Unity.Services.Authentication;
+--assembly-defines=Unity.Services.Lobbies;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.RenderPipelines.Universal.Shaders;
 --assembly-defines=Unity.Multiplayer.Tools.MetricTypes;
@@ -436,6 +447,7 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsReporting;
 --assembly-defines=Unity.Multiplayer.Tools.MetricEvents;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Component;
+--assembly-defines=websocket-sharp;
 --assembly-defines=Unity.Collections.LowLevel.ILSupport;
 --assembly-defines=Unity.VisualScripting.Antlr3.Runtime;
 --assembly-defines=Unity.Burst.Unsafe;
@@ -502,11 +514,13 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.RenderPipelines.Core.ShaderLibrary;
 --assembly-defines=Unity.Collections;
 --assembly-defines=Unity.Netcode.Runtime;
+--assembly-defines=unity-websocket-sharp;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities.RNSM;
 --assembly-defines=Unity.Multiplayer.Tools.MetricTestData;
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.Multiplayer.Samples.Utilities;
 --assembly-defines=Unity.Services.Core.Analytics;
+--assembly-defines=Unity.Services.Wire.Internal;
 --assembly-defines=Unity.Multiplayer.Tools.Common;
 --assembly-defines=Unity.Profiling.Core;
 --assembly-defines=Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary;
@@ -530,6 +544,7 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Multiplayer.Tools.Initialization;
 --assembly-defines=Unity.Multiplayer.Tools.Adapters;
 --assembly-defines=Unity.Services.Authentication;
+--assembly-defines=Unity.Services.Lobbies;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.RenderPipelines.Universal.Shaders;
 --assembly-defines=Unity.Multiplayer.Tools.MetricTypes;
@@ -539,6 +554,7 @@ Library: C:\Users\owen\Documents\GitHub\NeonTank\Temp\BurstOutput\Data\Plugins\x
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsReporting;
 --assembly-defines=Unity.Multiplayer.Tools.MetricEvents;
 --assembly-defines=Unity.Multiplayer.Tools.NetStatsMonitor.Component;
+--assembly-defines=websocket-sharp;
 --assembly-defines=Unity.Collections.LowLevel.ILSupport;
 --assembly-defines=Unity.VisualScripting.Antlr3.Runtime;
 --assembly-defines=Unity.Burst.Unsafe;
