@@ -6,7 +6,7 @@ using UnityEngine;
 public class Powerups : MonoBehaviour
 {
     private MagazineSystem magSys;
-    private Player player;
+    private PlayerControl player;
     [SerializeField] private GameObject targetPlayer;
     [SerializeField] private int magIncreaseAmount;
     [SerializeField] private float speedUpAmount;
@@ -55,7 +55,7 @@ public class Powerups : MonoBehaviour
             targetPlayer = coll.gameObject;
             isIn = true;
             magSys = targetPlayer.GetComponent<MagazineSystem>();
-            player = targetPlayer.GetComponent<Player>();
+            player = targetPlayer.GetComponent<PlayerControl>();
         }
     }
 

@@ -4,7 +4,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : NetworkBehaviour
+public class PlayerControl : NetworkBehaviour
 {
     private CharacterController cc;
     private MagazineSystem magSys;
