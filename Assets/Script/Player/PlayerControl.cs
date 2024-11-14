@@ -16,6 +16,7 @@ public class PlayerControl : NetworkBehaviour
     [SerializeField] private Transform nozzle;
     [SerializeField] private GameObject tankHead;
     [SerializeField] public int hp;
+    [SerializeField] private GameObject playerCam;
     
     private Vector3 move;
     private Vector3 direction;
@@ -38,11 +39,14 @@ public class PlayerControl : NetworkBehaviour
         magSys = GetComponent<MagazineSystem>();
         Debug.Log(okeh.position);
         Debug.Log(moveDirection);
-    }
+    }   
 
     public override void OnNetworkSpawn()
     {
-
+        if (IsOwner)
+        {
+            playerCam.SetActive(true);
+        }
     }
     // Update is called once per frame
     void Update()
