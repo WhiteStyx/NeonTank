@@ -6,8 +6,8 @@ NeonTank is a PvP multiplayer game where 2 players fight eachother with tanks. A
 ## 📋 Project Info
 This project is done using Unity 2022.3.21f1
 
-| **Role** | **Name** | **Development Time** |
-|:-|:-|:-|
+| **Role** | **Name** |
+|:-|:-|
 | Game Designer & Artist | Jeremy Edward Budiliantono Dewanto | 
 | Game Programmer | Christopher Owen Anjaya |
 | Game Programmer| Luas Adil Kurniawan |
