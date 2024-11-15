@@ -1,5 +1,3 @@
-
-
 Hello! Thank you for downloading our game :D
 ## Description:
 
@@ -9,22 +7,16 @@ In this game we attempt to simulate how to cook the dish with the aid of our fri
 ## 📋 Project Info
 This project is done using Unity 2022.3.21f1
 
-| **Role** | **Name** | 
-|:-|:-|
-| Game Designer & Sound | Vincent Pho Wijaya |
-| Game Designer | Raphael Krisandi |
-| Game Designer | Evan Derian Rustam |
-| Game Artist | Ariq Bimo Nurputro |
+| **Role** | **Name** | **Development Time** |
+|:-|:-|:-|
+| Game Designer & Artist | Jeremy Edward Budiliantono Dewanto | 
+| Game Programmer | Christopher Owen Anjaya |
 | Game Programmer| Luas Adil Kurniawan |
 
 ##  📜Scripts and Features
-
-- In this game, we need to clear the stage before certain turn.
-- in some Nodes there is some obstacle that need to clear with playing minigames.
-
 |  Script       | Description                                                  |
 | ------------------- | ------------------------------------------------------------ |
-| Laser.cs | Manages Laser for Light minigames |
+| `Laser.cs` | Manages Laser for Light minigames |
 | `GameManager.cs`  | Manages the game state |
 | `CookingBoard.cs` | Manages the item drop area |
 | `StirDrop`  | Manages the cooking minigame |
@@ -39,13 +31,12 @@ This project is done using Unity 2022.3.21f1
 ## 📂Files description
 
 ```
-├── ChefDiary                  # In this Folder, containing all the Unity project files, to be opened by a Unity Editor
+├── NeonTank                  # In this Folder, containing all the Unity project files, to be opened by a Unity Editor
    ├── Assets                         #  In this Folder, it contains all our code, assets, scenes, etcwas not automatically created by Unity
-      ├── Prefab                   # In this folder, it contaions preafab
-      ├── Resources                  # In this folder, it contaions all sprites, backgrounds, UI image, etc
+      ├── Prefab                   # In this folder, it contains preafab
+      ├── Resources                  # In this folder, it contains all sprites, backgrounds, UI image, etc
       ├── Scenes                     # In this folder, there are scenes. You can open these scenes to play the game via Unity
-      ├── Scripts                     # In this folder, it contaions all script for the games
-      ├── SO                         # In this folder, it contaions all Scriptable Object
+      ├── Scripts                     # In this folder, it contains all script for the games
       ├── TextMeshPro                 # In this folder, it contaions plugin for TextMeshPro
       ├── ....
    ├── ...
@@ -58,13 +49,16 @@ The following controls are bound in-game, for gameplay and testing.
 
 | Key Binding       | Function          |
 | ----------------- | ----------------- |
-| Left Click        | Interact          |
-| Left Click Hold   | Drag              |
+| W        | Move Up          |
+| A         | Move Left              |
+| S         | Move Down              |
+| D         | Move Right              |
+| Left Click         | Shoot              |
 
 ## Installation Guide:
 
-Itch.io: https://whitestyx.itch.io/chefs-diary
-1. Download the Chef's Diary file from the download page
+Itch.io: https://whitestyx.itch.io/neontank
+1. Download the file from the download page
 2. Provide sufficient storage and make sure your device meets the minimum requirements of the game
 3. The file will be directed automatically into the default download space designated on your device
 4. Unzip the file on the place you wish to place the game on
@@ -79,4 +73,4 @@ If there are any problems on opening/while playing the game, contact us on :
 Thank you very much for your attention!
 If you enjoy our game, please give a like, review, or post your gameplay and tag us!
 
-Enjoy your time on Chef's Diary. 
+Enjoy your time on Neon Tank.
