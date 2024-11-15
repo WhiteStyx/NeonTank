@@ -1,8 +1,7 @@
 Hello! Thank you for downloading our game :D
 ## Description:
 
-Chef's Diary is a cooking simulator game where you learn how to cook Indonesian cuisines from the recipes in the game. One of the many recipes available in Indonesia is Nasi Goreng Tek-Tek.
-In this game we attempt to simulate how to cook the dish with the aid of our friend!
+NeonTank is a PvP multiplayer game where 2 players fight eachother with tanks. Avoid enemy’s bullet, and collect buffs to make your tank stronger.
 
 ## 📋 Project Info
 This project is done using Unity 2022.3.21f1
