@@ -93,14 +93,24 @@ public class Player : NetworkBehaviour
         bool shoot = GetComponent<MagazineSystem>().shootable;
         if (Input.GetMouseButtonDown(0))
         {
-            if(shoot)
+            if (shoot)
             {
-                GameObject bullet = Instantiate(bulletPrefab, nozzle.position, nozzle.rotation);
-                bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
+                ShootServerRpc();
                 magSys.currMag -= 1;
             }
         }
     }
+
+    [ServerRpc]
+    private void ShootServerRpc()
+    {
+        Debug.Log("spawn");
+        GameObject bullet = Instantiate(bulletPrefab, nozzle.position, nozzle.rotation);
+        bullet.GetComponent<NetworkObject>().Spawn(true);
+        bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
+ 
+    }
+
 
     private Vector3 GetMousePosition()
     {
@@ -112,6 +122,18 @@ public class Player : NetworkBehaviour
         return Vector3.zero;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            TakeDamage();
+        }
+    }
+
+    private void TakeDamage()
+    {
+        hp -= 1;
+    }
     private void Dead()
     {
         if(hp<=0)
