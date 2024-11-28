@@ -10,14 +10,14 @@ public class PlayerControl : NetworkBehaviour
     private MagazineSystem magSys;
     public PlayerInput playerControls;
     PlayerInput.PlayerActions p_input;
-    [SerializeField] private float speed = 5f;
+    public int hp;
+    public float speed = 5f;
     public float bulletSpeed = 20f;
-    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform nozzle;
+    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject tankHead;
-    [SerializeField] public int hp;
     [SerializeField] private GameObject playerCam;
-    
+    public Vector3 bulletScale;
     private Vector3 move;
     private Vector3 direction;
     Vector3 moveDirection;
@@ -96,6 +96,7 @@ public class PlayerControl : NetworkBehaviour
             if(shoot)
             {
                 GameObject bullet = Instantiate(bulletPrefab, nozzle.position, nozzle.rotation);
+                bulletPrefab.transform.localScale = bulletScale;
                 bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
                 magSys.currMag -= 1;
             }

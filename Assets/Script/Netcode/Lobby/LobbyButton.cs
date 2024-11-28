@@ -11,7 +11,7 @@ public class LobbyButton : MonoBehaviour
 {
     public Lobby hostLobby, joinedLobby;
     float heartbeatTimer, lobbyUpdateTimer;
-    TestLobby thescript;
+    LobbyManager thescript;
     [SerializeField] GameObject testLobby;
     string playerName;
 
@@ -23,7 +23,7 @@ public class LobbyButton : MonoBehaviour
 
     public async void _CreateLobby()
     {
-        playerName = testLobby.GetComponent<TestLobby>().playerName;
+        playerName = testLobby.GetComponent<LobbyManager>().playerName;
         await CreateLobby();
     }
 
