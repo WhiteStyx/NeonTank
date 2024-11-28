@@ -7,7 +7,7 @@ public class MagazineSystem : MonoBehaviour
 {
     [SerializeField] public int maxMag;
     [SerializeField] public int currMag;
-    [SerializeField] private float reloadTime;
+    [SerializeField] public float reloadTime;
     bool reloading;
     public bool shootable;
 
