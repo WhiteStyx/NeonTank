@@ -4,13 +4,13 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : NetworkBehaviour
+public class PlayerControl : NetworkBehaviour
 {
     private CharacterController cc;
     private MagazineSystem magSys;
     public PlayerInput playerControls;
     PlayerInput.PlayerActions p_input;
-    [SerializeField] private float speed = 5f;
+    [SerializeField] public float speed = 5f;
     public float bulletSpeed = 20f;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform nozzle;
@@ -26,17 +26,17 @@ public class Player : NetworkBehaviour
     {
         playerControls = new PlayerInput();
         p_input = playerControls.Player;
+        cc = GetComponent<CharacterController>();
+        magSys = GetComponent<MagazineSystem>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        cc = GetComponent<CharacterController>();
-
         Transform okeh = FindAnyObjectByType<Spawnpoint>().GetComponent<Spawnpoint>().GetPos((int) OwnerClientId);
         transform.position = new Vector3(okeh.position.x, okeh.position.y, okeh.position.z);
         moveDirection = okeh.position;
-        magSys = GetComponent<MagazineSystem>();
+        
         Debug.Log(okeh.position);
         Debug.Log(moveDirection);
     }   

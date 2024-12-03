@@ -6,17 +6,6 @@ using UnityEngine.SceneManagement;
 
 public static class Loader
 {
-    public enum Scene
-    {
-        MainMenuScene,
-        LobbyScene,
-        GameScene,
-        LoadingScene,
-        CharSelectScene
-    }
-
-    private static Scene targetScene;
-
     public static void Load(string targetScene)
     {
         SceneManager.LoadScene(targetScene);

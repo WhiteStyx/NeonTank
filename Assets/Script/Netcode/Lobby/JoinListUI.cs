@@ -12,6 +12,7 @@ using UnityEngine.UI;
 public class JoinListUI : MonoBehaviour
 {
     [HideInInspector] public string lobbyName;
+    [HideInInspector] public string hostName;
     [HideInInspector] public int maxPlayers;
     [HideInInspector] public int currentPlayers;
     [HideInInspector] public string lobbyId;
