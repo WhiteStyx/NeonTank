@@ -28,7 +28,7 @@ public class Powerups : MonoBehaviour
         {
             isIn = false;
             timeToActivate = 3f;
-            Gacha();
+            MoveSpeedIncrease();
         }
     }
 

@@ -655,9 +655,10 @@ MonoBehaviour:
   joinLobbyPrefab: {fileID: 4285420670367673176, guid: c47d8d86b11f6f6498f4b6b35c1257e0, type: 3}
   inRoomPrefab: {fileID: 4664304009577724590, guid: b8e82580485abbf41813b4f7c946ade4, type: 3}
   canvas: {fileID: 1638074852}
+  inputWindow: {fileID: 0}
+  loadingScreen: {fileID: 0}
   lobbyUI: {fileID: 36950178}
   playerName: 
-  inputWindow: {fileID: 0}
   lobbyCode: 
 --- !u!4 &981986633
 Transform:
@@ -840,10 +841,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

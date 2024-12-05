@@ -4,18 +4,18 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : NetworkBehaviour
+public class PlayerControl : NetworkBehaviour
 {
     private CharacterController cc;
     private MagazineSystem magSys;
     public PlayerInput playerControls;
     PlayerInput.PlayerActions p_input;
-    [SerializeField] private float speed = 5f;
+    [SerializeField] public float speed = 5f;
     public float bulletSpeed = 20f;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform nozzle;
     [SerializeField] private GameObject tankHead;
-    [SerializeField] public int hp;
+    public NetworkVariable<int> hp = new NetworkVariable<int>();
     [SerializeField] private GameObject playerCam;
     
     private Vector3 move;
@@ -26,6 +26,7 @@ public class Player : NetworkBehaviour
     {
         playerControls = new PlayerInput();
         p_input = playerControls.Player;
+        hp.Value = 5;
     }
 
     // Start is called before the first frame update
@@ -132,11 +133,11 @@ public class Player : NetworkBehaviour
 
     private void TakeDamage()
     {
-        hp -= 1;
+        hp.Value -= 1;
     }
     private void Dead()
     {
-        if(hp<=0)
+        if(hp.Value<=0)
         {
             Destroy(gameObject);
         }

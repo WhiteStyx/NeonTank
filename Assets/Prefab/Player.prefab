@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 7807414493837543011}
   - component: {fileID: 8614345335589163963}
   - component: {fileID: 2963752976906811272}
-  - component: {fileID: -1220304897019736215}
+  - component: {fileID: 4103683969676122063}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -603,7 +603,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8893401449677097759, guid: 7ff33359a96e0574b8095530a51bb66e, type: 3}
   nozzle: {fileID: 8743896960580084998}
   tankHead: {fileID: 3437404503912341750}
-  hp: 5
+  hp:
+    m_InternalValue: 0
   playerCam: {fileID: 60142886904368485}
 --- !u!114 &7807414493837543011
 MonoBehaviour:
@@ -682,8 +683,8 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!64 &-1220304897019736215
-MeshCollider:
+--- !u!135 &4103683969676122063
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -697,13 +698,12 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1001 &2465002819441645512
 PrefabInstance:
   m_ObjectHideFlags: 0
