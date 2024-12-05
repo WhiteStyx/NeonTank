@@ -51,8 +51,7 @@ public class GameManager : NetworkBehaviour
     }
     private void Start()
     {
-        GameInput.Instance.OnPauseAction += GameInput_OnPauseAction;
-        GameInput.Instance.OnInteractAction += GameInput_OnInteractAction;
+        PlayerControl.Instance.OnPauseAction += PlayerControl_OnPauseAction;
     }
 
     public override void OnNetworkSpawn()
@@ -135,7 +134,7 @@ public class GameManager : NetworkBehaviour
         }
     }
 
-    private void GameInput_OnPauseAction(object sender, EventArgs e)
+    private void PlayerControl_OnPauseAction(object sender, EventArgs e)
     {
         TogglePauseGame();
     }
