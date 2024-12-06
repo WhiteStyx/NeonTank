@@ -132,6 +132,7 @@ public class PlayerControl : NetworkBehaviour
     {
         hp -= 1;
     }
+    
     private void Dead()
     {
         if(hp<=0)
