@@ -29,7 +29,6 @@ public class Bullet : NetworkBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("collide");
         if (collision.collider.tag == "Wall")
         {
             direction = Vector3.Reflect(lastVelocity.normalized, collision.GetContact(0).normal); //mantul

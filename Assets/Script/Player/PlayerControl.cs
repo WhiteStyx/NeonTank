@@ -105,9 +105,11 @@ public class PlayerControl : NetworkBehaviour
     [ServerRpc]
     private void ShootServerRpc()
     {
+        Debug.Log("spawn");
         GameObject bullet = Instantiate(bulletPrefab, nozzle.position, nozzle.rotation);
         bullet.GetComponent<NetworkObject>().Spawn(true);
         bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
+ 
     }
 
 
@@ -133,7 +135,6 @@ public class PlayerControl : NetworkBehaviour
     {
         hp.Value -= 1;
     }
-    
     private void Dead()
     {
         if(hp.Value<=0)

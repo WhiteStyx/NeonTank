@@ -16,20 +16,20 @@ using Unity.Networking.Transport.Relay;
 
 public class LobbyManager : MonoBehaviour
 {
-    private const string KEY_RELAY_JOIN_CODE = "RelayJoinCode";
-
     float heartbeatTimer = 15f;
     float heartbeatTimerMax = 15f;
     float lobbyUpdateTimer;
     [SerializeField] GameObject joinLobbyPrefab;
     [SerializeField] GameObject inRoomPrefab;
     [SerializeField] GameObject canvas;
-    GameObject inputWindow;
+    [SerializeField] GameObject inputWindow;
     GameObject loadingScreen;
-    GameObject lobbyRoom, insideRoom, startMenu;
+    GameObject lobbyRoom, insideRoom;
     [SerializeField] GameObject playerPrefab;
     [SerializeField] RectTransform lobbyUI;
     RectTransform listUI;
+    LobbyButton lobbyButton;
+    TMP_InputField codeToJoin;
     public Lobby hostLobby;
     //public bool create, check, join, joinCode, pPlayer, update;
     public string playerName;
@@ -59,10 +59,8 @@ public class LobbyManager : MonoBehaviour
     async void Start()
     {
         lobbyRoom = canvas.transform.Find("Lobby").gameObject;
-        startMenu = canvas.transform.Find("StartMenu").gameObject;
         insideRoom = canvas.transform.Find("InsideRoom").gameObject;
-        loadingScreen = canvas.transform.Find("LoadingScene").gameObject;
-        loadingScreen.SetActive(true);
+        loadingScreen = canvas.transform.Find("Loading").gameObject;
         await Initialize();
         loadingScreen.SetActive(false);
     }
@@ -90,6 +88,9 @@ public class LobbyManager : MonoBehaviour
             Debug.Log("Signed In " + AuthenticationService.Instance.PlayerId);
         };
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
+
+        playerName = "Nameduh" + Random.Range(10, 99);
+        Debug.Log(playerName);
     }
 
     async void HandleLobbyHeartbeat()
@@ -105,7 +106,7 @@ public class LobbyManager : MonoBehaviour
 
     async void HandleLobbyPollUpdate()
     {
-        if(hostLobby == null || SceneManager.GetActiveScene().name != "Lobby")
+        if(hostLobby == null && SceneManager.GetActiveScene().name != "Lobby")
         {
             return;
         }
@@ -130,9 +131,6 @@ public class LobbyManager : MonoBehaviour
 
             if(hostLobby.Players[0].Data != null)
             {
-                int currentPlayer = hostLobby.Players.Count;
-                TMP_Text playerCount = insideRoom.transform.Find("Players").GetComponent<TMP_Text>();
-                playerCount.text = currentPlayer + "/" + hostLobby.MaxPlayers;
                 PrintPlayer(hostLobby);
             }
         }
@@ -192,17 +190,15 @@ public class LobbyManager : MonoBehaviour
         {
             loadingScreen.SetActive(true);
             string lobbyName = "My Lobby";
-            int maxPlayer = 2;
-            
-            
+            int maxPlayer = 4;
             CreateLobbyOptions createLobbyOptions = new CreateLobbyOptions{
                 IsPrivate = false,
                 Player = GetPlayer(),
                 Data = new Dictionary<string, DataObject>{
                     {"Started", new DataObject(DataObject.VisibilityOptions.Public, "0")},
-                    // {"Address", new DataObject(DataObject.VisibilityOptions.Public, "") },
-                    // {"Port", new DataObject(DataObject.VisibilityOptions.Public, "") },
-                    // {"Map", new DataObject(DataObject.VisibilityOptions.Public, "Circle", DataObject.IndexOptions.S1)}
+                    {"Address", new DataObject(DataObject.VisibilityOptions.Public, "") },
+                    {"Port", new DataObject(DataObject.VisibilityOptions.Public, "") },
+                    {"Map", new DataObject(DataObject.VisibilityOptions.Public, "Circle", DataObject.IndexOptions.S1)}
                 }
             };
             Lobby lobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, maxPlayer, createLobbyOptions);
@@ -211,22 +207,22 @@ public class LobbyManager : MonoBehaviour
 
             Allocation allocation = await AllocateRelay();
             string relayJoinCode = await GetRelayJoinCode(allocation);
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(allocation, "dlts"));
             await LobbyService.Instance.UpdateLobbyAsync(hostLobby.Id, new UpdateLobbyOptions{
                 Data = new Dictionary<string, DataObject>
                 {
-                    { KEY_RELAY_JOIN_CODE, new DataObject(DataObject.VisibilityOptions.Member, relayJoinCode)}
+                    {"RelayJoinCode", new DataObject(DataObject.VisibilityOptions.Member, relayJoinCode)}
                 }
             });
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(allocation, "dtls"));
 
             Debug.Log("Created Lobby " + lobby.Name + " " + lobby.MaxPlayers + " " + lobby.LobbyCode + " " + lobby.Id);
+            lobbyRoom.SetActive(false);
             insideRoom.SetActive(true);
             loadingScreen.SetActive(false);
             PrintPlayer(hostLobby);
         } 
         catch(LobbyServiceException e)
         {
-            startMenu.SetActive(true);
             loadingScreen.SetActive(false);
             Debug.Log(e);
         }
@@ -255,7 +251,6 @@ public class LobbyManager : MonoBehaviour
 
             QueryResponse queryResponse = await Lobbies.Instance.QueryLobbiesAsync(queryLobbiesOptions);
 
-            
             //Debug.Log("Lobbies found : " + queryResponse.Results.Count);
             foreach(Lobby lobby in queryResponse.Results)
             {
@@ -265,6 +260,8 @@ public class LobbyManager : MonoBehaviour
                 joinListUI.hostName = lobby.Players[0].Data["PlayerName"].Value;
                 joinListUI.maxPlayers = lobby.MaxPlayers;
                 joinListUI.currentPlayers = lobby.Players.Count;
+                Debug.Log(lobby.Name + " " + lobby.MaxPlayers);
+
             }
         }
         catch(LobbyServiceException e)
@@ -302,9 +299,9 @@ public class LobbyManager : MonoBehaviour
             
             hostLobby = await Lobbies.Instance.JoinLobbyByIdAsync(lobbyId, options);
 
-            string relayJoinCode = hostLobby.Data[KEY_RELAY_JOIN_CODE].Value;
+            string relayJoinCode = hostLobby.Data["RelayJoinCode"].Value;
             JoinAllocation joinAllocation = await JoinRelay(relayJoinCode);
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(joinAllocation, "dtls"));
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(joinAllocation, "dlts"));
             
             Debug.Log("Joined Lobby");
             lobbyRoom.SetActive(false);
@@ -335,7 +332,7 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
-    public async void LeaveLobby()
+    private async void LeaveLobby()
     {
         try
         {
@@ -366,8 +363,9 @@ public class LobbyManager : MonoBehaviour
 
     private void PrintPlayer(Lobby lobby)
     {
-        listUI = canvas.transform.Find("InsideRoom/Panel").GetComponent<RectTransform>();
-        Transform lobbyList = listUI;
+        Debug.Log("Players in lobby " + lobby.Name + lobby.Players.Count);
+        listUI = canvas.transform.Find("InsideRoom/List").GetComponent<RectTransform>();
+        Transform lobbyList = listUI.Find("Scroll View/Viewport/Content");
         for(int i = 0; i < lobbyList.childCount; i++)
         {
             Destroy(lobbyList.GetChild(i).gameObject);
@@ -375,15 +373,7 @@ public class LobbyManager : MonoBehaviour
         foreach(Player player in lobby.Players)
         {
             PlayerListUI playerList = Instantiate(inRoomPrefab, lobbyList).GetComponent<PlayerListUI>();
-            if(IsLobbyHost())
-            {
-                playerList.playerName = player.Data["PlayerName"].Value + " <HOST>";
-                playerList.kickButton.SetActive(false);
-            }
-            else
-            {
-                playerList.playerName = player.Data["PlayerName"].Value;
-            }
+            playerList.playerName = player.Data["PlayerName"].Value;
         }
     }
 
@@ -393,7 +383,7 @@ public class LobbyManager : MonoBehaviour
         {
             string address = NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address;
             ushort port = NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Port;
-            
+
             await Lobbies.Instance.UpdateLobbyAsync(hostLobby.Id, new UpdateLobbyOptions
             {
                 Data = new Dictionary<string, DataObject>
@@ -407,6 +397,8 @@ public class LobbyManager : MonoBehaviour
             NetworkManager.Singleton.StartHost();
             NetworkManager.Singleton.SceneManager.OnLoadComplete += OnLoadComplete;
             Loader.LoadNetwork("SceneOwen");
+            
+            
         }
         catch(LobbyServiceException e)
         {

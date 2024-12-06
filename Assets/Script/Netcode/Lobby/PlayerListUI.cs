@@ -6,7 +6,6 @@ using TMPro;
 public class PlayerListUI : MonoBehaviour
 {
     [HideInInspector] public string playerName;
-    public GameObject kickButton;
     TMP_Text playerNameUI;
     
     void Start()
