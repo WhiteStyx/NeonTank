@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class Powerups : MonoBehaviour
 {
+    public enum buffTier
+    {
+        Tier1,
+        Tier2,
+        Tier3,
+        Tier4
+    }
     private MagazineSystem magSys;
     private PlayerControl player;
     [SerializeField] private GameObject targetPlayer;
@@ -16,20 +23,9 @@ public class Powerups : MonoBehaviour
     [SerializeField] private float reloadTimeReduce;
     bool isIn;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
-        if(isIn)    timeToActivate -= Time.deltaTime;
-        if(timeToActivate < 0)
-        {
-            isIn = false;
-            timeToActivate = 3f;
-            MoveSpeedIncrease();
-        }
+        
     }
 
     private void OnTriggerEnter(Collider coll)
@@ -49,9 +45,15 @@ public class Powerups : MonoBehaviour
         timeToActivate = 3f;
     }
 
-    private void Gacha()
+    private void Gacha(string tier)
     {
         
+            int x = Random.Range(0, 3);
+            if(x == 0)  MagIncrease();
+            if(x == 1)  BulletSpeedIncrease();
+            if(x == 2)  MoveSpeedIncrease();
+            if(x == 3)  ReloadTimeDecrease();
+       
     }    
 
     //Tier 1
@@ -95,4 +97,5 @@ public class Powerups : MonoBehaviour
     
 
     //Tier 4
+
 }

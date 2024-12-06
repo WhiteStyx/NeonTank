@@ -150,6 +150,7 @@ public class PlayerControl : NetworkBehaviour
     {
         hp.Value -= 1;
     }
+    
     private void Dead()
     {
         if(hp.Value<=0)

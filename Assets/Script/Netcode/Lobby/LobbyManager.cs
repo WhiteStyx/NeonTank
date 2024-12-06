@@ -304,7 +304,7 @@ public class LobbyManager : MonoBehaviour
 
             string relayJoinCode = hostLobby.Data[KEY_RELAY_JOIN_CODE].Value;
             JoinAllocation joinAllocation = await JoinRelay(relayJoinCode);
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(joinAllocation, "dlts"));
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(joinAllocation, "dtls"));
             
             Debug.Log("Joined Lobby");
             lobbyRoom.SetActive(false);
