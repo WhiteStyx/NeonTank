@@ -25,7 +25,8 @@ public class Powerups : MonoBehaviour
 
     void Update()
     {
-        
+        if(isIn) timeToActivate -= Time.deltaTime;
+        if(timeToActivate <= 0) Gacha();
     }
 
     private void OnTriggerEnter(Collider coll)
@@ -45,7 +46,7 @@ public class Powerups : MonoBehaviour
         timeToActivate = 3f;
     }
 
-    private void Gacha(string tier)
+    private void Gacha()
     {
         
             int x = Random.Range(0, 3);

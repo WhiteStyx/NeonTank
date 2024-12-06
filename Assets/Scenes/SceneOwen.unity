@@ -2664,8 +2664,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2238230224556358692, guid: 1a9911c69e5e16d4e99b395cd0bafd4c, type: 3}
+      propertyPath: hpIncreaseAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238230224556358692, guid: 1a9911c69e5e16d4e99b395cd0bafd4c, type: 3}
+      propertyPath: reloadTimeReduce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238230224556358692, guid: 1a9911c69e5e16d4e99b395cd0bafd4c, type: 3}
+      propertyPath: magIncreaseAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238230224556358692, guid: 1a9911c69e5e16d4e99b395cd0bafd4c, type: 3}
       propertyPath: moveSpeedUpAmount
-      value: 0
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238230224556358692, guid: 1a9911c69e5e16d4e99b395cd0bafd4c, type: 3}
+      propertyPath: bulletSpeedUpAmount
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5488735799787861981, guid: 1a9911c69e5e16d4e99b395cd0bafd4c, type: 3}
       propertyPath: m_Name
