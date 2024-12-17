@@ -216,7 +216,7 @@ public class LobbyManager : MonoBehaviour
                 {
                     { KEY_RELAY_JOIN_CODE, new DataObject(DataObject.VisibilityOptions.Member, relayJoinCode)}
                 }
-            }); 
+            });
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(allocation, "dtls"));
 
             Debug.Log("Created Lobby " + lobby.Name + " " + lobby.MaxPlayers + " " + lobby.LobbyCode + " " + lobby.Id);
@@ -418,8 +418,8 @@ public class LobbyManager : MonoBehaviour
     {
         try
         {
-            //NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address = hostLobby.Data["Address"].Value;
-            //NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Port = ushort.Parse(hostLobby.Data["Port"].Value);
+            NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address = hostLobby.Data["Address"].Value;
+            NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Port = ushort.Parse(hostLobby.Data["Port"].Value);
 
             NetworkManager.Singleton.StartClient();
             NetworkManager.Singleton.SceneManager.OnLoadComplete += OnLoadComplete;
