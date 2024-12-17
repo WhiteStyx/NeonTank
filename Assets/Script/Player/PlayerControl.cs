@@ -1,22 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerControl : NetworkBehaviour
 {
-    public static PlayerControl Instance { get; private set; }
-
-    public event EventHandler OnMoveAction;
-    public event EventHandler OnLookAction;
-    public event EventHandler OnFireAction;
-    public event EventHandler OnPauseAction;
-
-
-
     private CharacterController cc;
     private MagazineSystem magSys;
     public PlayerInput playerControls;
@@ -35,15 +24,9 @@ public class PlayerControl : NetworkBehaviour
 
     void Awake()
     {
-        Instance = this;
         playerControls = new PlayerInput();
         p_input = playerControls.Player;
         hp.Value = 5;
-
-        playerControls.Player.Move.performed += Move_performed;
-        playerControls.Player.Fire.performed += Fire_performed;
-        playerControls.Player.Look.performed += Look_performed;
-        playerControls.Player.Pause.performed += Pause_performed;
     }
 
     // Start is called before the first frame update
@@ -157,22 +140,5 @@ public class PlayerControl : NetworkBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    private void Move_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
-    {
-        OnMoveAction?.Invoke(this, EventArgs.Empty);
-    }
-    private void Fire_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
-    {
-        OnFireAction?.Invoke(this, EventArgs.Empty);
-    }
-    private void Look_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
-    {
-        OnLookAction?.Invoke(this, EventArgs.Empty);
-    }
-    private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
-    {
-        OnPauseAction?.Invoke(this, EventArgs.Empty);
     }
 }
