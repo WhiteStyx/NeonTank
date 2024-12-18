@@ -16,14 +16,14 @@ public class JoinListUI : MonoBehaviour
     [HideInInspector] public int maxPlayers;
     [HideInInspector] public int currentPlayers;
     [HideInInspector] public string lobbyId;
-    [SerializeField] TMP_Text lobbyNameUI, playersUI, mapUI;
+    [SerializeField] TMP_Text lobbyNameUI, playersUI, hostNameUI;
     Button button;
 
     void Start()
     {
         lobbyNameUI = transform.Find("LobbyName").GetComponent<TMP_Text>();
         playersUI = transform.Find("Players").GetComponent<TMP_Text>();
-        mapUI = transform.Find("Map").GetComponent<TMP_Text>();
+        hostNameUI = transform.Find("HostName").GetComponent<TMP_Text>();
         
         button = gameObject.GetComponent<Button>();
 
@@ -36,9 +36,8 @@ public class JoinListUI : MonoBehaviour
 
     public void RefreshList()
     {
-        lobbyNameUI.text = lobbyName;
+        hostNameUI.text = hostName;
         playersUI.text = currentPlayers.ToString() + "/" + maxPlayers.ToString();
-        
     }
 
     public void JoinLobby()
