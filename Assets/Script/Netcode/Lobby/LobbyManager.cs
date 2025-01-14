@@ -44,7 +44,7 @@ public class LobbyManager : MonoBehaviour
     {
         get
         {
-            if(_instance == null) Debug.Log("Fuck");
+            if(_instance == null) Debug.Log("sial");
             return _instance;
         }
     }
@@ -240,7 +240,7 @@ public class LobbyManager : MonoBehaviour
             Debug.Log("Created Lobby " + lobby.Name + " " + lobby.MaxPlayers + " " + lobby.LobbyCode + " " + lobby.Id);
             insideRoom.SetActive(true);
             loadingScreen.SetActive(false);
-            PrintPlayer(hostLobby);
+            //PrintPlayer(hostLobby);
             StartGame();
         } 
         catch(LobbyServiceException e)
@@ -325,11 +325,7 @@ public class LobbyManager : MonoBehaviour
             Debug.Log("Joined Lobby");
             lobbyRoom.SetActive(false);
             insideRoom.SetActive(true);
-            PrintPlayer(hostLobby);
-
-            Debug.Log("Relay");
-            
-            
+            //PrintPlayer(hostLobby);
         }
         catch(LobbyServiceException e)
         {
